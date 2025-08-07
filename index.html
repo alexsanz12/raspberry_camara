@@ -10,6 +10,7 @@
     <h2 id="titulo">Vista en vivo desde la Raspberry Pi</h2>
     <video id="video" width="640" height="480" controls autoplay></video>
 
+    <div id="mensaje"></div>
     <script>
         const video = document.getElementById('video');
         const videoSrc = 'http://192.168.1.99/stream.m3u8';
@@ -28,8 +29,22 @@
                 video.play();
             });
         } else {
-            alert("Tu navegador no soporta HLS 😢");
+            alert("Tu navegador no soporta HLS");
         }
+
+        function actualizarMovimiento() {
+            fetch('movimiento.json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('movimiento').innerHTML = 
+                        `<strong>${data.mensaje}</strong><br>Fecha y hora: ${data.hora}`;
+                })
+                .catch(() => {
+                    document.getElementById('movimiento').innerHTML = "Sin movimientos recientes.";
+                });
+        }
+        setInterval(actualizarMovimiento, 2000); // Actualiza cada 2 segundos
+
     </script>
 </body>
 </html>
