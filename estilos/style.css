@@ -1,11 +1,25 @@
+#body {
+    background-color: #000000fb;
+}
 #titulo {
     text-align: center;
     font-size: 2em;
-    color: #0051ff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(255, 255, 255, 0.733);
+    background-color: #0084ff2f;
+    border-radius: 50px;
 }
 
 #video {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#mensaje {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ff0000;
+    margin-top: 20px;
 }

@@ -6,14 +6,14 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <link rel="stylesheet" href="estilos/style.css">
 </head>
-<body>
+<body id="body">
     <h2 id="titulo">Vista en vivo desde la Raspberry Pi</h2>
     <video id="video" width="640" height="480" controls autoplay></video>
 
-    <div id="mensaje"></div>
+    <div id="mensaje">Esperando movimiento...</div>
     <script>
         const video = document.getElementById('video');
-        const videoSrc = 'http://192.168.1.99/stream.m3u8';
+        const videoSrc = 'http://192.168.1.98/stream.m3u8';
 
         if (Hls.isSupported()) {
             const hls = new Hls();
